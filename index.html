@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pac-Man</title>
+    <style>
+      @font-face {
+        font-family: "Press Start 2P";
+        src: url("fonts/PressStart2P-Regular.ttf") format("truetype");
+      }
+      * {
+        font-family: "Press Start 2P";
+        background-image: url("images/background.png");
+      }
+      #gameCanvas {
+        box-shadow: 10px 10px 20px black;
+      }
+      h1 {
+        text-align: center;
+        color: lightgrey;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        height: 100vh;
+        margin: 0;
+      }
+      #scoreBoard {
+        color: white;
+        margin-top: 20px;
+        text-align: center;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Pac-Man</h1>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <div id="scoreBoard">
+      <span id="score">Score: 0</span> | <span id="level">Level: 1</span>
+    </div>
+    <script src="src/Game.js" type="module"></script>
+  </body>
+</html>
