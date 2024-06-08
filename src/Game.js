@@ -74,27 +74,27 @@ function drawGameEnd() {
     const padding = 20;
     ctx.font = `${textSize}px 'Press Start 2P'`;
 
-    // Bereken de breedte van de tekst
+
     const textWidth = ctx.measureText(text).width;
     const textHeight = textSize; // Aangezien we de font-size kennen
 
-    // Bereken de afmetingen van de zwarte balk
+
     const rectWidth = textWidth + 2 * padding;
     const rectHeight = textHeight + 2 * padding;
 
-    // Bereken de positie van de zwarte balk
+
     const rectX = (canvas.width - rectWidth) / 2;
     const rectY = (canvas.height - rectHeight) / 2;
 
-    // Bereken de positie van de tekst
+
     const textX = canvas.width / 2;
     const textY = canvas.height / 2;
 
-    // Teken de zwarte balk
+
     ctx.fillStyle = "black";
     ctx.fillRect(rectX, rectY, rectWidth, rectHeight);
 
-    // Teken de tekst in het midden van de balk
+
     ctx.fillStyle = "red";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
