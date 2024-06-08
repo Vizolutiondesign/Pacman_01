@@ -72,7 +72,7 @@ function drawGameEnd() {
 
     const textSize = 75;
     const padding = 20;
-
+    ctx.font = `30px`;
 
     // Bereken de breedte van de tekst
     const textWidth = ctx.measureText(text).width;
