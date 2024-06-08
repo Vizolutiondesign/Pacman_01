@@ -1,6 +1,6 @@
 import TileMap from "./TileMap.js";
 
-const tileSize = 40;
+const tileSize = 43;
 const initialVelocity = 2.5;
 
 const canvas = document.getElementById("gameCanvas");
@@ -70,24 +70,38 @@ function drawGameEnd() {
       text = "Game Over";
     }
 
-    ctx.fillStyle = "black";
-    ctx.fillRect(0, canvas.height / 3.2, canvas.width, 80);
+    const textSize = 75;
+    const padding = 20;
+    ctx.font = `${textSize}px sans-serif`;
 
-    // Gebruik het standaard lettertype van de HTML en stel de kleur in op rood
+    // Bereken de breedte van de tekst
+    const textWidth = ctx.measureText(text).width;
+    const textHeight = textSize; // Aangezien we de font-size kennen
+
+    // Bereken de afmetingen van de zwarte balk
+    const rectWidth = textWidth + 2 * padding;
+    const rectHeight = textHeight + 2 * padding;
+
+    // Bereken de positie van de zwarte balk
+    const rectX = (canvas.width - rectWidth) / 2;
+    const rectY = (canvas.height - rectHeight) / 2;
+
+    // Bereken de positie van de tekst
+    const textX = canvas.width / 2;
+    const textY = canvas.height / 2;
+
+    // Teken de zwarte balk
+    ctx.fillStyle = "black";
+    ctx.fillRect(rectX, rectY, rectWidth, rectHeight);
+
+    // Teken de tekst in het midden van de balk
     ctx.fillStyle = "red";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-
-    // Bereken de positie om de tekst in het midden van het canvas te plaatsen
-    const x = canvas.width / 2;
-    const y = canvas.height / 2;
-
-    // Tekst grootte instellen (indien nodig)
-    ctx.font = "75px sans-serif";
-
-    ctx.fillText(text, x, y);
+    ctx.fillText(text, textX, textY);
   }
 }
+
 
 
 function updateScoreBoard() {
