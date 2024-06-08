@@ -73,16 +73,22 @@ function drawGameEnd() {
     ctx.fillStyle = "black";
     ctx.fillRect(0, canvas.height / 3.2, canvas.width, 80);
 
-    ctx.font = "75px comic sans";
-    const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
-    gradient.addColorStop("0", "magenta");
-    gradient.addColorStop("0.5", "blue");
-    gradient.addColorStop("1.0", "red");
+    // Gebruik het standaard lettertype van de HTML en stel de kleur in op rood
+    ctx.fillStyle = "red";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
 
-    ctx.fillStyle = gradient;
-    ctx.fillText(text, 10, canvas.height / 2);
+    // Bereken de positie om de tekst in het midden van het canvas te plaatsen
+    const x = canvas.width / 2;
+    const y = canvas.height / 2;
+
+    // Tekst grootte instellen (indien nodig)
+    ctx.font = "75px sans-serif";
+
+    ctx.fillText(text, x, y);
   }
 }
+
 
 function updateScoreBoard() {
   document.getElementById("score").textContent = `Score: ${score}`;
