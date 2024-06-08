@@ -1,7 +1,7 @@
 import TileMap from "./TileMap.js";
 
-const tileSize = 43;
-const initialVelocity = 2.5;
+const tileSize = 42;
+const initialVelocity = 2;
 
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
@@ -72,7 +72,7 @@ function drawGameEnd() {
 
     const textSize = 75;
     const padding = 20;
-    ctx.font = `${textSize}px sans-serif`;
+
 
     // Bereken de breedte van de tekst
     const textWidth = ctx.measureText(text).width;
