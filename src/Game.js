@@ -137,4 +137,4 @@ function openNieuwePagina() {
 }
 
 // Timer einde spel
-setTimeout(openNieuwePagina, 5 * 60 * 1000); // 5 minuten * 60 seconden * 1000 milliseconden
+//setTimeout(openNieuwePagina, 5 * 60 * 1000); // 5 minuten * 60 seconden * 1000 milliseconden
